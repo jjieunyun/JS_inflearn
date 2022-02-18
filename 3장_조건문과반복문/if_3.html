@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문_2</title>
+</head>
+<body>
+    <script>
+        //2와 3의 공배수를 검사하는 프로그램
+        let value = window.prompt("숫자를 입력해 주세요.");
+        //prompt에서 받은 값은 string -> parseInt 함수로스트링을 숫자로 강제 형변환
+        value = parseInt(value); 
+
+        // &&은 논리 연산자로써 두 개의 조건이 true 이면 true를 리턴한다.
+        //||는 둘중에 하나면 true리턴
+        if ((value % 2 == 0) && (value % 3 == 0)) {
+            alert("2와 3의 공배수 입니다.");
+        }
+        else {
+            alert("2와 3의 공배수가 아닙니다.");
+        }
+
+    </script>
+
+</body>
+</html>3
