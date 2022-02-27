@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수 (일반함수로 풀이) </title>
+    <script>
+        //일반함수 
+        //일반함수를 사용하게 되면 로직구현, 로직처리부분까지 아래와 같이 있으므로
+        //코드의 중복도 있고 구현과 처리의 기능이 합쳐져 있기 때문에, 유지보수에도 어려움이 있다.
+        function calculator1 (op, num1, num2){  //calculator안에 매개변수
+            let result = "";  //result를 초기화
+            //로직구현부
+            switch(op) {
+                case "+" :
+                    result = num1 + num2;
+                    break;
+
+                case "-" :
+                    result = num1 - num2;
+                    break;
+
+                case "*" :
+                    result = num1 *  num2;
+                    break;
+
+                case "/" :
+                    result = num1 / num2;
+                    break;
+
+                default : 
+                    result = "지원하지 않는 연산자 입니다!";
+                    
+            } 
+            //로직 처리부분 
+            document.write("주어진 두개의 수의 연산결과 : " + result + "<br>")
+        }    
+        //일반함수는 로직구현부와 로직처리부가 합쳐져있어서. 로직처리를 다르게 하기 어려움
+            calculator1("-", 200, 100);
+
+
+            
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저함수 -1</title>
+    <script>
+        //일반함수에서의 지역변수는 함수가 종료되면 같이 메모리에서 제거가 되는게 일반적이다.
+        //따라서 함수를 아래와 같이 호출하면 값이 저장되지 않아서 1만 호출됨
+        /*
+        function add () {
+            let cnt = 0;
+            cnt++;
+            return cnt;
+        }
+        document.write("1번째 cnt값 : " + add() + "<br>");
+        document.write("2번째 cnt값 : " + add() + "<br>");
+        document.write("3번째 cnt값 : " + add() + "<br>");
+        document.write("4번째 cnt값 : " + add() + "<br>");
+        document.write("5번째 cnt값 : " + add() + "<br>");
+        */
+
+        //클로저 이용
+        function createCounter() {
+            let cnt = 0;  //지역변수를 선언했다.
+            //add()는 클로저함수이다.
+            function add() {
+                cnt++;  //외부함수의 지역변수를 이용하고 있다. -> 메모리에서 제거가 안됨(클로저현상)
+                return cnt
+            }
+            return add;
+        }
+
+        let counter = createCounter(); //함수리터럴
+        document.write("1번째 cnt값 : " + counter() + "<br>");
+        document.write("2번째 cnt값 : " + counter() + "<br>");
+        document.write("3번째 cnt값 : " + counter() + "<br>");
+        document.write("4번째 cnt값 : " + counter() + "<br>");
+        document.write("5번째 cnt값 : " + counter() + "<br>");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

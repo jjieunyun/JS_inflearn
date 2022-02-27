@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수10 (중첩함수의  변수의 범위 scope)</title>
+    <script>
+        //아래 3개는 전역변수
+        let a = 100;
+        let b = 200;
+        let c = 300;
+
+        function outter() {
+            //outter함수의 지역변수
+            let b = 2000;
+            let c = 3000;
+            //중첩함수 선언과 구현
+            //중첩함수는 외부함수의 변수에 쉽게 접근할 수있는 장점이 있다.
+            function inner() {
+                let c = 30000;
+                document.write("1. a =" + a + "<br>"); //전역함수 호출
+                document.write("2. b =" + b + "<br>"); // outter함수의 변수 호출
+                document.write("3. c =" + c + "<br>"); //inner함수의 변수 호출
+            }
+            inner(); //inner를 (중첩함수)호출하는 코드
+
+        }
+        outter(); //outter를 호출하는 코드
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
